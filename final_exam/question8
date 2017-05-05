@@ -1,0 +1,19 @@
+
+//console 1
+mkdir data
+
+mongod --configsvr --port 27019 --dbpath data
+
+
+//console2
+mongorestore --port 27019 config_server
+
+
+mongo localhost:27019/config
+
+
+db.chunks.find().sort({_id:1}).next().lastmodEpoch.getTimestamp().toUTCString().substr(20,6)
+
+answer: 39.15
+
+

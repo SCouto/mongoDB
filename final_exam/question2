@@ -1,0 +1,49 @@
+//console1
+./a.sh
+
+//console2 
+mongo --shell --port 27003 a.js
+ourinit() 
+
+db.foo.drop()
+db.foo.insert( { _id : 1 }, { writeConcern : { w : 2 } } )
+db.foo.insert( { _id : 2 }, { writeConcern : { w : 2 } } )
+db.foo.insert( { _id : 3 }, { writeConcern : { w : 2 } } )
+var a = connect("localhost:27001/admin");
+a.shutdownServer()
+rs.status()
+db.foo.insert( { _id : 4 } )
+db.foo.insert( { _id : 5 } )
+db.foo.insert( { _id : 6 } )
+
+//console1
+ps -A | grep mongod
+# should see the 27003 and 27002 ones running (only)
+ps ax | grep mongo | grep 27003 | awk '{print $1}' | xargs kill
+# wait a little for the shutdown perhaps...then:
+ps -A | grep mongod
+# should get that just the arbiter is presentâ€¦
+
+//restart server 27001
+mongod --fork --logpath a.log --smallfiles --oplogSize 50 --port 27001 --dbpath data/z1 --replSet z
+
+//console 2
+mongo --shell --port 27001 a.js
+
+ db.foo.insert( { _id : "last" } )
+
+//console1
+
+mongod --fork --logpath c.log --smallfiles --oplogSize 50 --port 27003 --dbpath data/z3 --replSet z
+
+//console 2
+db.foo.find()
+{ "_id" : 1 }
+{ "_id" : 2 }
+{ "_id" : 3 }
+{ "_id" : "last" }
+
+Answer: MongoDB preserves the order of writes in a collection in its consistency model. In this problem, 27003’s oplog was effectively a “fork” and to preserve write ordering a rollback was necessary during 27003’s recovery phase.
+
+
+

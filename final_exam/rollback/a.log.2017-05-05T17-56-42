@@ -1,0 +1,84 @@
+2017-05-05T19:47:33.928+0200 I CONTROL  [initandlisten] MongoDB starting : pid=7003 port=27001 dbpath=/home/couto/workspace/mongoDBM102/final_exam/rollback/data/z1 64-bit host=couto-laptop
+2017-05-05T19:47:33.929+0200 I CONTROL  [initandlisten] db version v3.2.12
+2017-05-05T19:47:33.929+0200 I CONTROL  [initandlisten] git version: ef3e1bc78e997f0d9f22f45aeb1d8e3b6ac14a14
+2017-05-05T19:47:33.929+0200 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+2017-05-05T19:47:33.929+0200 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-05-05T19:47:33.929+0200 I CONTROL  [initandlisten] modules: none
+2017-05-05T19:47:33.929+0200 I CONTROL  [initandlisten] build environment:
+2017-05-05T19:47:33.929+0200 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2017-05-05T19:47:33.929+0200 I CONTROL  [initandlisten]     distarch: x86_64
+2017-05-05T19:47:33.929+0200 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-05-05T19:47:33.929+0200 I CONTROL  [initandlisten] options: { net: { port: 27001 }, processManagement: { fork: true }, replication: { oplogSizeMB: 50, replSet: "z" }, storage: { dbPath: "data/z1", mmapv1: { smallFiles: true } }, systemLog: { destination: "file", path: "a.log" } }
+2017-05-05T19:47:33.958+0200 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=4G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-05-05T19:47:34.844+0200 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+2017-05-05T19:47:34.844+0200 I CONTROL  [initandlisten] 
+2017-05-05T19:47:34.844+0200 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+2017-05-05T19:47:34.844+0200 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2017-05-05T19:47:34.845+0200 I CONTROL  [initandlisten] 
+2017-05-05T19:47:35.402+0200 I REPL     [initandlisten] Did not find local voted for document at startup.
+2017-05-05T19:47:35.403+0200 I REPL     [initandlisten] Did not find local replica set configuration document at startup;  NoMatchingDocument: Did not find replica set configuration document in local.system.replset
+2017-05-05T19:47:35.403+0200 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/couto/workspace/mongoDBM102/final_exam/rollback/data/z1/diagnostic.data'
+2017-05-05T19:47:35.404+0200 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2017-05-05T19:47:36.495+0200 I NETWORK  [initandlisten] waiting for connections on port 27001
+2017-05-05T19:48:00.218+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54174 #1 (1 connection now open)
+2017-05-05T19:48:00.220+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54178 #2 (2 connections now open)
+2017-05-05T19:48:00.221+0200 I ASIO     [NetworkInterfaceASIO-Replication-0] Connecting to localhost:27003
+2017-05-05T19:48:00.281+0200 I NETWORK  [conn1] end connection 127.0.0.1:54174 (1 connection now open)
+2017-05-05T19:48:00.289+0200 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27003
+2017-05-05T19:48:02.291+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54186 #3 (2 connections now open)
+2017-05-05T19:48:02.292+0200 I NETWORK  [conn3] end connection 127.0.0.1:54186 (1 connection now open)
+2017-05-05T19:48:02.779+0200 I REPL     [replExecDBWorker-1] Starting replication applier threads
+2017-05-05T19:48:02.779+0200 W REPL     [rsSync] did not receive a valid config yet
+2017-05-05T19:48:02.779+0200 I REPL     [ReplicationExecutor] New replica set config in use: { _id: "z", version: 1, protocolVersion: 1, members: [ { _id: 1, host: "localhost:27001", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 2, host: "localhost:27002", arbiterOnly: true, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 3, host: "localhost:27003", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, getLastErrorModes: {}, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('590cbad0db275e4b41bd0969') } }
+2017-05-05T19:48:02.779+0200 I REPL     [ReplicationExecutor] This node is localhost:27001 in the config
+2017-05-05T19:48:02.779+0200 I REPL     [ReplicationExecutor] transition to STARTUP2
+2017-05-05T19:48:02.779+0200 I ASIO     [NetworkInterfaceASIO-Replication-0] Connecting to localhost:27002
+2017-05-05T19:48:02.780+0200 I REPL     [ReplicationExecutor] Member localhost:27003 is now in state SECONDARY
+2017-05-05T19:48:02.780+0200 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27002
+2017-05-05T19:48:02.781+0200 I REPL     [ReplicationExecutor] Member localhost:27002 is now in state STARTUP
+2017-05-05T19:48:02.781+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54196 #4 (2 connections now open)
+2017-05-05T19:48:03.779+0200 I REPL     [rsSync] ******
+2017-05-05T19:48:03.779+0200 I REPL     [rsSync] creating replication oplog of size: 50MB...
+2017-05-05T19:48:03.932+0200 I STORAGE  [rsSync] Starting WiredTigerRecordStoreThread local.oplog.rs
+2017-05-05T19:48:03.933+0200 I STORAGE  [rsSync] The size storer reports that the oplog contains 0 records totaling to 0 bytes
+2017-05-05T19:48:03.933+0200 I STORAGE  [rsSync] Scanning the oplog to determine where to place markers for truncation
+2017-05-05T19:48:04.554+0200 I REPL     [rsSync] ******
+2017-05-05T19:48:04.557+0200 I REPL     [rsSync] initial sync pending
+2017-05-05T19:48:04.841+0200 I REPL     [ReplicationExecutor] syncing from: localhost:27003
+2017-05-05T19:48:04.844+0200 I REPL     [rsSync] initial sync drop all databases
+2017-05-05T19:48:04.844+0200 I STORAGE  [rsSync] dropAllDatabasesExceptLocal 1
+2017-05-05T19:48:04.844+0200 I REPL     [rsSync] initial sync clone all databases
+2017-05-05T19:48:04.864+0200 I REPL     [rsSync] initial sync data copy, starting syncup
+2017-05-05T19:48:04.864+0200 I REPL     [rsSync] oplog sync 1 of 3
+2017-05-05T19:48:04.864+0200 I REPL     [rsSync] oplog sync 2 of 3
+2017-05-05T19:48:04.865+0200 I REPL     [rsSync] initial sync building indexes
+2017-05-05T19:48:04.865+0200 I REPL     [rsSync] oplog sync 3 of 3
+2017-05-05T19:48:04.868+0200 I REPL     [rsSync] initial sync finishing up
+2017-05-05T19:48:04.886+0200 I REPL     [rsSync] initial sync done
+2017-05-05T19:48:04.889+0200 I REPL     [ReplicationExecutor] transition to RECOVERING
+2017-05-05T19:48:04.890+0200 I REPL     [ReplicationExecutor] transition to SECONDARY
+2017-05-05T19:48:05.780+0200 I REPL     [ReplicationExecutor] could not find member to sync from
+2017-05-05T19:48:05.781+0200 I REPL     [ReplicationExecutor] Member localhost:27002 is now in state ARBITER
+2017-05-05T19:48:13.184+0200 I COMMAND  [conn2] command local.replset.election command: replSetRequestVotes { replSetRequestVotes: 1, setName: "z", dryRun: false, term: 1, candidateIndex: 2, configVersion: 1, lastCommittedOp: { ts: Timestamp 1494006481000|1, t: -1 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:63 locks:{ Global: { acquireCount: { r: 4, w: 2 } }, Database: { acquireCount: { r: 1, W: 2 } }, Collection: { acquireCount: { r: 1 } } } protocol:op_command 414ms
+2017-05-05T19:48:15.783+0200 I REPL     [ReplicationExecutor] Member localhost:27003 is now in state PRIMARY
+2017-05-05T19:48:15.783+0200 I REPL     [ReplicationExecutor] syncing from: localhost:27003
+2017-05-05T19:48:15.784+0200 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27003
+2017-05-05T19:48:15.785+0200 I ASIO     [NetworkInterfaceASIO-BGSync-0] Connecting to localhost:27003
+2017-05-05T19:48:15.787+0200 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27003
+2017-05-05T19:54:30.423+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54360 #5 (3 connections now open)
+2017-05-05T19:54:48.893+0200 I COMMAND  [conn5] terminating, shutdown command received
+2017-05-05T19:54:48.893+0200 I FTDC     [conn5] Shutting down full-time diagnostic data capture
+2017-05-05T19:54:48.897+0200 I REPL     [conn5] Stopping replication applier threads
+2017-05-05T19:54:49.375+0200 I STORAGE  [conn2] got request after shutdown()
+2017-05-05T19:54:52.558+0200 W EXECUTOR [rsBackgroundSync] killCursors command task failed: CallbackCanceled: Callback canceled
+2017-05-05T19:54:52.559+0200 I CONTROL  [conn5] now exiting
+2017-05-05T19:54:52.559+0200 I NETWORK  [conn5] shutdown: going to close listening sockets...
+2017-05-05T19:54:52.559+0200 I NETWORK  [conn5] closing listening socket: 6
+2017-05-05T19:54:52.559+0200 I NETWORK  [conn5] closing listening socket: 7
+2017-05-05T19:54:52.559+0200 I NETWORK  [conn5] removing socket file: /tmp/mongodb-27001.sock
+2017-05-05T19:54:52.559+0200 I NETWORK  [conn5] shutdown: going to flush diaglog...
+2017-05-05T19:54:52.559+0200 I NETWORK  [conn5] shutdown: going to close sockets...
+2017-05-05T19:54:52.560+0200 I STORAGE  [conn5] WiredTigerKVEngine shutting down
+2017-05-05T19:54:52.560+0200 I NETWORK  [conn4] end connection 127.0.0.1:54196 (1 connection now open)
+2017-05-05T19:54:53.077+0200 I STORAGE  [conn5] shutdown: removing fs lock...
+2017-05-05T19:54:53.077+0200 I CONTROL  [conn5] dbexit:  rc: 0

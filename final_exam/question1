@@ -1,0 +1,53 @@
+//console1
+chmod a+x a.sh
+
+./a.sh
+
+
+
+//console2
+mongo --shell --port 27003 a.js
+
+
+ourinit()
+
+waiting  db.foo.insert( { _id : 1 }, { writeConcern : { w : 2 } } )
+
+db.foo.insert( { _id : 2 }, { writeConcern : { w : 2 } } )
+
+db.foo.insert( { _id : 3 }, { writeConcern : { w : 2 } } )
+
+
+
+var a = connect("localhost:27001/admin");
+
+a.shutdownServer()
+
+
+rs.status()
+
+
+
+db.foo.insert( { _id : 4 } )
+db.foo.insert( { _id : 5 } )
+db.foo.insert( { _id : 6 } )
+
+
+//console3
+mongod --fork --logpath a.log --smallfiles --oplogSize 50 --port 27001 --dbpath data/z1 --replSet z
+
+
+//console2
+db.foo.find()
+{ "_id" : 1 }
+{ "_id" : 2 }
+{ "_id" : 3 }
+{ "_id" : 4 }
+{ "_id" : 5 }
+{ "_id" : 6 }
+
+answer = 6
+
+
+//console3
+mongod --fork --logpath a.log --smallfiles --oplogSize 50 --port 27001 --dbpath data/z1 --replSet z

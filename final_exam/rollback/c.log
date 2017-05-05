@@ -1,0 +1,108 @@
+2017-05-05T20:09:39.283+0200 I CONTROL  [initandlisten] MongoDB starting : pid=8989 port=27003 dbpath=/home/couto/workspace/mongoDBM102/final_exam/rollback/data/z3 64-bit host=couto-laptop
+2017-05-05T20:09:39.283+0200 I CONTROL  [initandlisten] db version v3.2.12
+2017-05-05T20:09:39.283+0200 I CONTROL  [initandlisten] git version: ef3e1bc78e997f0d9f22f45aeb1d8e3b6ac14a14
+2017-05-05T20:09:39.283+0200 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+2017-05-05T20:09:39.283+0200 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-05-05T20:09:39.283+0200 I CONTROL  [initandlisten] modules: none
+2017-05-05T20:09:39.283+0200 I CONTROL  [initandlisten] build environment:
+2017-05-05T20:09:39.283+0200 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2017-05-05T20:09:39.283+0200 I CONTROL  [initandlisten]     distarch: x86_64
+2017-05-05T20:09:39.283+0200 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-05-05T20:09:39.283+0200 I CONTROL  [initandlisten] options: { net: { port: 27003 }, processManagement: { fork: true }, replication: { oplogSizeMB: 50, replSet: "z" }, storage: { dbPath: "data/z3", mmapv1: { smallFiles: true } }, systemLog: { destination: "file", path: "c.log" } }
+2017-05-05T20:09:39.311+0200 I -        [initandlisten] Detected data files in /home/couto/workspace/mongoDBM102/final_exam/rollback/data/z3 created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-05-05T20:09:39.312+0200 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=4G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-05-05T20:09:40.470+0200 I STORAGE  [initandlisten] Starting WiredTigerRecordStoreThread local.oplog.rs
+2017-05-05T20:09:40.470+0200 I STORAGE  [initandlisten] The size storer reports that the oplog contains 17 records totaling to 1600 bytes
+2017-05-05T20:09:40.470+0200 I STORAGE  [initandlisten] Scanning the oplog to determine where to place markers for truncation
+2017-05-05T20:09:40.541+0200 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+2017-05-05T20:09:40.541+0200 I CONTROL  [initandlisten] 
+2017-05-05T20:09:40.541+0200 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+2017-05-05T20:09:40.541+0200 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2017-05-05T20:09:40.541+0200 I CONTROL  [initandlisten] 
+2017-05-05T20:09:40.547+0200 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/couto/workspace/mongoDBM102/final_exam/rollback/data/z3/diagnostic.data'
+2017-05-05T20:09:40.547+0200 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2017-05-05T20:09:40.548+0200 I NETWORK  [initandlisten] waiting for connections on port 27003
+2017-05-05T20:09:40.549+0200 I REPL     [ReplicationExecutor] New replica set config in use: { _id: "z", version: 1, protocolVersion: 1, members: [ { _id: 1, host: "localhost:27001", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 2, host: "localhost:27002", arbiterOnly: true, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 3, host: "localhost:27003", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, getLastErrorModes: {}, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('590cbad0db275e4b41bd0969') } }
+2017-05-05T20:09:40.549+0200 I REPL     [ReplicationExecutor] This node is localhost:27003 in the config
+2017-05-05T20:09:40.549+0200 I REPL     [ReplicationExecutor] transition to STARTUP2
+2017-05-05T20:09:40.549+0200 I REPL     [ReplicationExecutor] Starting replication applier threads
+2017-05-05T20:09:40.549+0200 I ASIO     [NetworkInterfaceASIO-Replication-0] Connecting to localhost:27001
+2017-05-05T20:09:40.549+0200 I REPL     [ReplicationExecutor] transition to RECOVERING
+2017-05-05T20:09:40.550+0200 I ASIO     [NetworkInterfaceASIO-Replication-0] Connecting to localhost:27002
+2017-05-05T20:09:40.551+0200 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27002
+2017-05-05T20:09:40.551+0200 I REPL     [ReplicationExecutor] transition to SECONDARY
+2017-05-05T20:09:40.551+0200 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27001
+2017-05-05T20:09:40.551+0200 I REPL     [ReplicationExecutor] Member localhost:27001 is now in state PRIMARY
+2017-05-05T20:09:40.551+0200 I REPL     [ReplicationExecutor] Member localhost:27002 is now in state ARBITER
+2017-05-05T20:09:41.265+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54734 #1 (1 connection now open)
+2017-05-05T20:09:43.733+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54736 #2 (2 connections now open)
+2017-05-05T20:09:46.551+0200 I REPL     [ReplicationExecutor] syncing from: localhost:27001
+2017-05-05T20:09:46.553+0200 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27001
+2017-05-05T20:09:46.554+0200 I ASIO     [NetworkInterfaceASIO-BGSync-0] Connecting to localhost:27001
+2017-05-05T20:09:46.555+0200 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27001
+2017-05-05T20:09:46.556+0200 I REPL     [rsBackgroundSync] Starting rollback due to OplogStartMissing: our last op time fetched: (term: 1, timestamp: May  5 20:05:24:1). source's GTE: (term: 2, timestamp: May  5 20:06:23:2) hashes: (5610460371282861824/1489922182843666009)
+2017-05-05T20:09:46.556+0200 I REPL     [rsBackgroundSync] rollback 0
+2017-05-05T20:09:46.556+0200 I REPL     [ReplicationExecutor] transition to ROLLBACK
+2017-05-05T20:09:46.556+0200 I REPL     [rsBackgroundSync] beginning rollback
+2017-05-05T20:09:46.556+0200 I REPL     [rsBackgroundSync] rollback 1
+2017-05-05T20:09:46.556+0200 I NETWORK  [conn2] end connection 127.0.0.1:54736 (1 connection now open)
+2017-05-05T20:09:46.556+0200 I NETWORK  [conn1] end connection 127.0.0.1:54734 (0 connections now open)
+2017-05-05T20:09:46.557+0200 I REPL     [rsBackgroundSync] rollback 2 FindCommonPoint
+2017-05-05T20:09:46.557+0200 I REPL     [rsBackgroundSync] rollback our last optime:   May  5 20:05:24:1
+2017-05-05T20:09:46.557+0200 I REPL     [rsBackgroundSync] rollback their last optime: May  5 20:08:50:1
+2017-05-05T20:09:46.557+0200 I REPL     [rsBackgroundSync] rollback diff in end of log times: -206 seconds
+2017-05-05T20:09:46.557+0200 I REPL     [rsBackgroundSync] rollback common point is (term: 1, timestamp: May  5 20:04:47:1)
+2017-05-05T20:09:46.557+0200 I REPL     [rsBackgroundSync] rollback 3 fixup
+2017-05-05T20:09:46.558+0200 I REPL     [rsBackgroundSync] rollback 3.5
+2017-05-05T20:09:46.558+0200 I REPL     [rsBackgroundSync] Setting minvalid to (term: 2, timestamp: May  5 20:08:50:1)
+2017-05-05T20:09:46.558+0200 I REPL     [rsBackgroundSync] rollback 4 n:1
+2017-05-05T20:09:46.558+0200 I REPL     [rsBackgroundSync] rollback 4.6
+2017-05-05T20:09:46.558+0200 I REPL     [rsBackgroundSync] rollback 4.7
+2017-05-05T20:09:46.560+0200 I REPL     [rsBackgroundSync] rollback 5 d:3 u:0
+2017-05-05T20:09:46.560+0200 I REPL     [rsBackgroundSync] rollback 6
+2017-05-05T20:09:46.560+0200 I REPL     [rsBackgroundSync] rollback done
+2017-05-05T20:09:46.560+0200 I REPL     [rsBackgroundSync] rollback finished
+2017-05-05T20:09:46.560+0200 I NETWORK  [SyncSourceFeedback] Socket say send() errno:9 Bad file descriptor 127.0.0.1:27001
+2017-05-05T20:09:46.689+0200 I REPL     [SyncSourceFeedback] SyncSourceFeedback error sending update: socket exception [SEND_ERROR] for 127.0.0.1:27001
+2017-05-05T20:09:46.689+0200 I REPL     [SyncSourceFeedback] updateUpstream failed: Location9001: socket exception [SEND_ERROR] for 127.0.0.1:27001, will retry
+2017-05-05T20:09:46.745+0200 I REPL     [ReplicationExecutor] transition to RECOVERING
+2017-05-05T20:09:46.745+0200 I REPL     [ReplicationExecutor] could not find member to sync from
+2017-05-05T20:09:47.269+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54746 #3 (1 connection now open)
+2017-05-05T20:09:47.746+0200 I REPL     [ReplicationExecutor] syncing from: localhost:27001
+2017-05-05T20:09:47.748+0200 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27001
+2017-05-05T20:09:47.750+0200 I REPL     [ReplicationExecutor] transition to SECONDARY
+2017-05-05T20:09:47.752+0200 I REPL     [ReplicationExecutor] could not find member to sync from
+2017-05-05T20:09:48.735+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54752 #4 (2 connections now open)
+2017-05-05T20:10:19.900+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54754 #5 (3 connections now open)
+2017-05-05T20:16:34.772+0200 I REPL     [conn5] replSetReconfig admin command received from client
+2017-05-05T20:17:02.792+0200 I NETWORK  [conn5] end connection 127.0.0.1:54754 (2 connections now open)
+2017-05-05T20:17:42.746+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54870 #6 (3 connections now open)
+2017-05-05T20:17:42.746+0200 I NETWORK  [conn6] end connection 127.0.0.1:54870 (2 connections now open)
+2017-05-05T20:17:42.751+0200 I REPL     [ReplicationExecutor] New replica set config in use: { _id: "z", version: 2, protocolVersion: 1, members: [ { _id: 1, host: "localhost:27001", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 2, host: "localhost:27002", arbiterOnly: true, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 3, host: "localhost:27003", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 0.0, tags: {}, slaveDelay: 0, votes: 1 } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, getLastErrorModes: {}, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('590cbad0db275e4b41bd0969') } }
+2017-05-05T20:17:42.751+0200 I REPL     [ReplicationExecutor] This node is localhost:27003 in the config
+2017-05-05T20:17:42.752+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54880 #7 (3 connections now open)
+2017-05-05T20:17:42.752+0200 I NETWORK  [conn7] end connection 127.0.0.1:54880 (2 connections now open)
+2017-05-05T20:17:42.753+0200 I NETWORK  [conn4] end connection 127.0.0.1:54752 (1 connection now open)
+2017-05-05T20:17:42.753+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54882 #8 (2 connections now open)
+2017-05-05T20:17:42.870+0200 I REPL     [ReplicationExecutor] syncing from: localhost:27001
+2017-05-05T20:17:42.872+0200 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27001
+2017-05-05T20:17:42.872+0200 I ASIO     [NetworkInterfaceASIO-BGSync-0] Connecting to localhost:27001
+2017-05-05T20:17:42.873+0200 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27001
+2017-05-05T20:18:09.880+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54892 #9 (3 connections now open)
+2017-05-05T20:25:12.873+0200 I NETWORK  [conn9] end connection 127.0.0.1:54892 (2 connections now open)
+2017-05-05T20:25:27.075+0200 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2017-05-05T20:25:27.075+0200 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2017-05-05T20:25:27.080+0200 I REPL     [signalProcessingThread] Stopping replication applier threads
+2017-05-05T20:25:27.839+0200 I STORAGE  [conn8] got request after shutdown()
+2017-05-05T20:25:28.093+0200 W EXECUTOR [rsBackgroundSync] killCursors command task failed: CallbackCanceled: Callback canceled
+2017-05-05T20:25:28.921+0200 I CONTROL  [signalProcessingThread] now exiting
+2017-05-05T20:25:28.921+0200 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2017-05-05T20:25:28.921+0200 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2017-05-05T20:25:28.921+0200 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2017-05-05T20:25:28.921+0200 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27003.sock
+2017-05-05T20:25:28.921+0200 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2017-05-05T20:25:28.921+0200 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2017-05-05T20:25:28.921+0200 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2017-05-05T20:25:28.921+0200 I NETWORK  [conn3] end connection 127.0.0.1:54746 (0 connections now open)
+2017-05-05T20:25:29.562+0200 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2017-05-05T20:25:29.562+0200 I CONTROL  [signalProcessingThread] dbexit:  rc: 0

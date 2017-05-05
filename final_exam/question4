@@ -1,0 +1,12 @@
+//In primary 
+cfg = rs.conf()
+
+cfg.members[2].priority=0
+
+rs.reconfig(cfg)
+
+
+//in 27003
+part4()
+answer: 233
+

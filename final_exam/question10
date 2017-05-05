@@ -1,0 +1,144 @@
+ db.elegans.createIndex({N2:1, mutant:1})
+{
+	"createdCollectionAutomatically" : false,
+	"numIndexesBefore" : 2,
+	"numIndexesAfter" : 3,
+	"ok" : 1
+}
+
+
+
+db.elegans.find( { N2 : "T", mutant : "A" } ).limit( 5 ).explain( "executionStats" )
+{
+	"queryPlanner" : {
+		"plannerVersion" : 1,
+		"namespace" : "snps.elegans",
+		"indexFilterSet" : false,
+		"parsedQuery" : {
+			"$and" : [
+				{
+					"N2" : {
+						"$eq" : "T"
+					}
+				},
+				{
+					"mutant" : {
+						"$eq" : "A"
+					}
+				}
+			]
+		},
+		"winningPlan" : {
+			"stage" : "LIMIT",
+			"limitAmount" : 5,
+			"inputStage" : {
+				"stage" : "FETCH",
+				"inputStage" : {
+					"stage" : "IXSCAN",
+					"keyPattern" : {
+						"N2" : 1,
+						"mutant" : 1
+					},
+					"indexName" : "N2_1_mutant_1",
+					"isMultiKey" : false,
+					"isUnique" : false,
+					"isSparse" : false,
+					"isPartial" : false,
+					"indexVersion" : 1,
+					"direction" : "forward",
+					"indexBounds" : {
+						"N2" : [
+							"[\"T\", \"T\"]"
+						],
+						"mutant" : [
+							"[\"A\", \"A\"]"
+						]
+					}
+				}
+			}
+		},
+		"rejectedPlans" : [ ]
+	},
+	"executionStats" : {
+		"executionSuccess" : true,
+		"nReturned" : 5,
+		"executionTimeMillis" : 1,
+		"totalKeysExamined" : 5,
+		"totalDocsExamined" : 5,
+		"executionStages" : {
+			"stage" : "LIMIT",
+			"nReturned" : 5,
+			"executionTimeMillisEstimate" : 10,
+			"works" : 6,
+			"advanced" : 5,
+			"needTime" : 0,
+			"needYield" : 0,
+			"saveState" : 0,
+			"restoreState" : 0,
+			"isEOF" : 1,
+			"invalidates" : 0,
+			"limitAmount" : 5,
+			"inputStage" : {
+				"stage" : "FETCH",
+				"nReturned" : 5,
+				"executionTimeMillisEstimate" : 10,
+				"works" : 5,
+				"advanced" : 5,
+				"needTime" : 0,
+				"needYield" : 0,
+				"saveState" : 0,
+				"restoreState" : 0,
+				"isEOF" : 0,
+				"invalidates" : 0,
+				"docsExamined" : 5,
+				"alreadyHasObj" : 0,
+				"inputStage" : {
+					"stage" : "IXSCAN",
+					"nReturned" : 5,
+					"executionTimeMillisEstimate" : 0,
+					"works" : 5,
+					"advanced" : 5,
+					"needTime" : 0,
+					"needYield" : 0,
+					"saveState" : 0,
+					"restoreState" : 0,
+					"isEOF" : 0,
+					"invalidates" : 0,
+					"keyPattern" : {
+						"N2" : 1,
+						"mutant" : 1
+					},
+					"indexName" : "N2_1_mutant_1",
+					"isMultiKey" : false,
+					"isUnique" : false,
+					"isSparse" : false,
+					"isPartial" : false,
+					"indexVersion" : 1,
+					"direction" : "forward",
+					"indexBounds" : {
+						"N2" : [
+							"[\"T\", \"T\"]"
+						],
+						"mutant" : [
+							"[\"A\", \"A\"]"
+						]
+					},
+					"keysExamined" : 5,
+					"dupsTested" : 0,
+					"dupsDropped" : 0,
+					"seenInvalidated" : 0
+				}
+			}
+		}
+	},
+	"serverInfo" : {
+		"host" : "couto-laptop",
+		"port" : 27501,
+		"version" : "3.2.12",
+		"gitVersion" : "ef3e1bc78e997f0d9f22f45aeb1d8e3b6ac14a14"
+	},
+	"ok" : 1
+}
+
+
+--Check totalDocsExamined in executionStats and

@@ -1,0 +1,36 @@
+//console2 from previous question
+
+db.shards.find()
+
+
+configsvr> db.shards.update({"_id":"s1"}, {$set: {"host" :"localhost:27501" }})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+configsvr> db.shards.update({"_id":"s2"}, {$set: {"host" :"localhost:27601" }})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+configsvr> db.shards.find()
+{ "_id" : "s1", "host" : "localhost:27501" }
+{ "_id" : "s2", "host" : "localhost:27601" }
+
+
+
+
+
+mkdir datas1
+mkdir datas2
+
+
+mongod --port 27501 --dbpath datas1
+mongod --port 27601 --dbpath datas2
+
+
+mongorestore --port 27501 s1
+mongorestore --port 27601 s2
+
+
+mongo --host localhost --port 27501
+
+
+use snps
+var x = db.elegans.aggregate( [ { $match : { N2 : "T" } } , { $group : { _id:"$N2" , n : { $sum : 1 } } } ] ).next(); print( x.n )
+
+answer = 47664
